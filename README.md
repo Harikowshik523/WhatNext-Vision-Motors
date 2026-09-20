@@ -30,16 +30,32 @@ This Salesforce application automates the vehicle ordering process by:
 - Flows
 - Reports & Dashboards
 
-## Project Structure
-```
-Documentation/
-├── Project_Report.pdf
-├── Presentation.pptx
-└── Screenshots/
+## Apex Components
 
-force-app/
-└── Salesforce Metadata
-```
+### Trigger
+- VehicleOrderTrigger
+  - Executes before and after insert/update events on Vehicle_Order__c.
+  - Delegates business logic to VehicleOrderTriggerHandler.
+
+### Apex Classes
+
+#### VehicleOrderTriggerHandler
+Features:
+- Prevents orders when vehicle stock is unavailable.
+- Automatically decreases stock quantity when an order is confirmed.
+- Uses Trigger Handler Pattern for better maintainability.
+
+#### VehicleOrderBatch
+Features:
+- Processes pending orders in bulk.
+- Checks stock availability.
+- Confirms eligible orders automatically.
+- Updates inventory records.
+
+#### VehicleOrderBatchScheduler
+Features:
+- Schedules VehicleOrderBatch execution daily.
+- Automates order reconciliation process.
 
 ## Author
 Kowshik Kota  
