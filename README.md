@@ -58,6 +58,6 @@ Features:
 - Automates order reconciliation process.
 
 ## Author
-Kowshik Kota  
+Hari Kowshik Kota  
 B.Tech CSE  
 VR Siddhartha Engineering College
